@@ -10,6 +10,8 @@ import com.generation.blogpessoal.model.PostagemModel;
 
 @Repository
 public interface PostagemRepository extends JpaRepository<PostagemModel, Long> {
+																	// não temos no video, porém é necessário para pesquisas por String
 	public List <PostagemModel> findAllByTituloContainingIgnoreCase(@Param("titulo") String titulo);
-
+	/*SELECT * FROM tb_postagens WHERE titulo = ""*/
+	/*SELECT * titulo FROM tb_postagens WHERE titulo LIKE="%titulo%"*/
 }
